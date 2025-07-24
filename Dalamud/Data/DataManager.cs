@@ -14,6 +14,7 @@ using Lumina.Excel;
 
 using Newtonsoft.Json;
 using Serilog;
+using Framework = FFXIVClientStructs.FFXIV.Client.System.Framework.Framework;
 
 namespace Dalamud.Data;
 

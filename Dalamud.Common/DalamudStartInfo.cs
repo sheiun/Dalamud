@@ -57,7 +57,7 @@ public record DalamudStartInfo
     /// <summary>
     /// Gets or sets the language of the game client.
     /// </summary>
-    public ClientLanguage Language { get; set; } = ClientLanguage.English;
+    public ClientLanguage Language { get; set; } = ClientLanguage.ChineseTraditional;
 
     /// <summary>
     /// Gets or sets the underlying platform�Dalamud runs on.

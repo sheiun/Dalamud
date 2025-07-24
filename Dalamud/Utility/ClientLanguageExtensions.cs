@@ -1,4 +1,5 @@
 using Dalamud.Game;
+using Lumina.Data;
 
 namespace Dalamud.Utility;
 
@@ -12,15 +13,17 @@ public static class ClientLanguageExtensions
     /// </summary>
     /// <param name="language">Language to convert.</param>
     /// <returns>Converted language.</returns>
-    public static Lumina.Data.Language ToLumina(this ClientLanguage language)
+    public static Language ToLumina(this ClientLanguage language)
     {
         return language switch
         {
-            ClientLanguage.Japanese => Lumina.Data.Language.Japanese,
-            ClientLanguage.English => Lumina.Data.Language.English,
-            ClientLanguage.German => Lumina.Data.Language.German,
-            ClientLanguage.French => Lumina.Data.Language.French,
-            _ => throw new ArgumentOutOfRangeException(nameof(language)),
+            ClientLanguage.Japanese           => Language.Japanese,
+            ClientLanguage.English            => Language.English,
+            ClientLanguage.German             => Language.German,
+            ClientLanguage.French             => Language.French,
+            ClientLanguage.ChineseSimplified  => Language.ChineseSimplified,
+            ClientLanguage.ChineseTraditional => Language.ChineseTraditional,
+            _                                 => Language.ChineseTraditional,
         };
     }
 
@@ -34,11 +37,13 @@ public static class ClientLanguageExtensions
     {
         return value switch
         {
-            ClientLanguage.Japanese => "ja",
-            ClientLanguage.English => "en",
-            ClientLanguage.German => "de",
-            ClientLanguage.French => "fr",
-            _ => throw new ArgumentOutOfRangeException(nameof(value)),
+            ClientLanguage.Japanese           => "ja",
+            ClientLanguage.English            => "en",
+            ClientLanguage.German             => "de",
+            ClientLanguage.French             => "fr",
+            ClientLanguage.ChineseSimplified  => "chs",
+            ClientLanguage.ChineseTraditional => "tc",
+            _                                 => "tc",
         };
     }
 
@@ -52,11 +57,13 @@ public static class ClientLanguageExtensions
     {
         return value switch
         {
-            "ja" => ClientLanguage.Japanese,
-            "en" => ClientLanguage.English,
-            "de" => ClientLanguage.German,
-            "fr" => ClientLanguage.French,
-            _ => throw new ArgumentOutOfRangeException(nameof(value)),
+            "ja"  => ClientLanguage.Japanese,
+            "en"  => ClientLanguage.English,
+            "de"  => ClientLanguage.German,
+            "fr"  => ClientLanguage.French,
+            "chs" => ClientLanguage.ChineseSimplified,
+            "tc" => ClientLanguage.ChineseTraditional,
+            _     => ClientLanguage.ChineseTraditional,
         };
     }
 }
