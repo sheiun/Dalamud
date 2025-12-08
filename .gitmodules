@@ -1,6 +1,6 @@
 [submodule "lib/FFXIVClientStructs"]
 	path = lib/FFXIVClientStructs
-	url = https://github.com/Dalamud-DailyRoutines/FFXIVClientStructs
+	url = https://github.com/sheiun/FFXIVClientStructs
 	branch = TC
 [submodule "lib/Nomade040-nmd"]
 	path = lib/Nomade040-nmd

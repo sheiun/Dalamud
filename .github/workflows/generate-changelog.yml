@@ -29,15 +29,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Generate and post changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIT_TERMINAL_PROMPT: 0
-        run: |
-          python .github/generate_changelog.py \
-            --webhook-url "${{ secrets.DISCORD_CHANGELOG_WEBHOOK_URL }}" \
-            --ignore "Update ClientStructs" \
-            --ignore "^build:"
+      # - name: Generate and post changelog
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GIT_TERMINAL_PROMPT: 0
+      #   run: |
+      #     python .github/generate_changelog.py \
+      #       --webhook-url "${{ secrets.DISCORD_CHANGELOG_WEBHOOK_URL }}" \
+      #       --ignore "Update ClientStructs" \
+      #       --ignore "^build:"
 
       - name: Upload changelog as artifact
         if: always()
