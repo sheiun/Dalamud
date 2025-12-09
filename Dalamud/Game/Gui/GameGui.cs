@@ -305,9 +305,9 @@ internal sealed unsafe class GameGui : IInternalDisposableService, IGameGui
         return ret;
     }
 
-    private void HandleActionHoverDetour(AgentActionDetail* hoverState, FFXIVClientStructs.FFXIV.Client.UI.Agent.ActionKind actionKind, uint actionId, int a4, bool a5, int a6, int a7)
+    private void HandleActionHoverDetour(AgentActionDetail* hoverState, FFXIVClientStructs.FFXIV.Client.UI.Agent.ActionKind actionKind, uint actionId, int flag, byte unk)
     {
-        this.handleActionHoverHook.Original(hoverState, actionKind, actionId, a4, a5, a6, a7);
+        this.handleActionHoverHook.Original(hoverState, actionKind, actionId, flag, unk);
         this.HoveredAction.ActionKind = (HoverActionKind)actionKind;
         this.HoveredAction.BaseActionID = actionId;
         this.HoveredAction.ActionID = hoverState->ActionId;
