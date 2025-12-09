@@ -23,3 +23,6 @@
 [submodule "lib/Lumina.Excel"]
 	path = lib/Lumina.Excel
 	url = https://github.com/NotAdam/Lumina.Excel.git
+[submodule "lib/FfxivArgLauncher"]
+	path = lib/FfxivArgLauncher
+	url = https://github.com/ottercorp/FfxivArgLauncher.git
